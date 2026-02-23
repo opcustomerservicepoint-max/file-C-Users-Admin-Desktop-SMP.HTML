@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SMP Manufacturing - Dealership Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background: url('background.jpg') no-repeat center center fixed;
+background-size: cover;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+/* Dark Overlay */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:-1;
+}
+
+.header{
+text-align:center;
+color:white;
+padding:40px 15px;
+}
+
+.header h1{
+margin:0;
+font-size:34px;
+}
+
+.header h2{
+margin:5px 0;
+font-weight:normal;
+}
+
+.container{
+width:90%;
+max-width:450px;
+margin:20px auto;
+padding:25px;
+border-radius:15px;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.4);
+color:white;
+}
+
+.container h3{
+text-align:center;
+margin-bottom:20px;
+}
+
+input, select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+background:#00b4db;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#0096c7;
+}
+
+.location{
+text-align:center;
+color:white;
+margin:30px 10px 10px;
+font-size:14px;
+}
+
+.footer{
+text-align:center;
+padding:15px;
+color:white;
+margin-top:auto;
+font-size:14px;
+}
+</style>
+
+<script>
+function redirectToWhatsApp(){
+let shop = document.forms["dealerForm"]["shop"].value;
+let owner = document.forms["dealerForm"]["owner"].value;
+let phone = document.forms["dealerForm"]["phone"].value;
+let city = document.forms["dealerForm"]["city"].value;
+let type = document.forms["dealerForm"]["type"].value;
+
+let message = "New Dealership Application:%0A%0A"
++ "Shop Name: " + shop + "%0A"
++ "Owner Name: " + owner + "%0A"
++ "Phone: " + phone + "%0A"
++ "City: " + city + "%0A"
++ "Business Type: " + type;
+
+window.location.href = "https://wa.me/917999288120?text=" + message;
+
+return false;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>SMP Manufacturing</h1>
+<h2>Cleaning Products Manufacturer & Supplier</h2>
+<p>Become Our Dealer</p>
+<p><b>High Quality Cleaning Products at Wholesale Price</b></p>
+</div>
+
+<div class="container">
+<h3>Apply for Dealership</h3>
+
+<form name="dealerForm" onsubmit="return redirectToWhatsApp()">
+
+<input type="text" name="shop" placeholder="Shop Name" required>
+<input type="text" name="owner" placeholder="Owner Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="text" name="city" placeholder="City" required>
+
+<select name="type" required>
+<option value="">Select Business Type</option>
+<option>Retailer</option>
+<option>Wholesaler</option>
+<option>Distributor</option>
+<option>Super Stockist</option>
+<option>Other</option>
+</select>
+
+<button type="submit">Submit Application</button>
+
+</form>
+</div>
+
+<div class="location">
+📍 Location: Gattabillod, Ahmedabad Road, Madhya Pradesh, India  
+📞 Contact: 7999288120
+</div>
+
+<div class="footer">
+© 2026 SMP Manufacturing | All Rights Reserved
+</div>
+
+</body>
+</html>
